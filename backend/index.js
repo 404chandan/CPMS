@@ -42,9 +42,9 @@ app.use('/profileImgs', express.static(path.join(__dirname, 'public/profileImgs'
 app.use('/resume', express.static(path.join(__dirname, 'public/resumes')));
 app.use('/offerLetter', express.static(path.join(__dirname, 'public/offerLetter')));
 
-// // ✅ MongoDB connection
-// const mongodb = require('./config/MongoDB');
-// mongodb();
+// ✅ MongoDB connection
+const mongodb = require('./config/MongoDB');
+mongodb();
 
 // ✅ Routes
 app.use('/user', require('./routes/user.route'));
