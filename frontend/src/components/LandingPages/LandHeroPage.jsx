@@ -44,16 +44,16 @@ function LandingHeroPage() {
           <input
             type="email"
             className="px-5 py-3 w-80 sm:w-96 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#1db5d7] text-black transition duration-300"
-            placeholder="Enter your email..."
+            placeholder="How can I help you"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
             type="button"
-            className="bg-green-500 hover:bg-green-600 transition duration-300 px-6 py-3 rounded-xl text-white font-semibold shadow-lg"
+            className="bg-purple-700 hover:bg-purple-600 transition duration-300 px-6 py-3 rounded-xl text-white font-semibold shadow-lg"
             onClick={handleCreateAccount}
           >
-            Create Account
+            Click to Explore 
           </button>
         </div>
 

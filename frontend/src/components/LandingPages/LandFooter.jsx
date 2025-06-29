@@ -19,7 +19,7 @@ function LandFooter() {
             <button
               key={idx}
               onClick={() => navigate(link.path)}
-              className="bg-green-600 hover:bg-green-500 px-5 py-2 rounded-md text-white text-sm font-medium shadow-md transition-all duration-300"
+              className="bg-purple-600 hover:bg-purple-500 px-5 py-2 rounded-md text-white text-sm font-medium shadow-md transition-all duration-300"
             >
               {link.label}
             </button>
@@ -28,8 +28,8 @@ function LandFooter() {
 
         {/* Footer Text */}
         <div className="text-center text-sm text-gray-600">
-          <p>© 2025 <span className="text-green-600 font-semibold">Training And Placement Management System</span>. All rights reserved.</p>
-          <p className="mt-1 text-xs text-gray-500">Developed by Adarsh, Chandan and Gangadhar with ❤</p>
+          <p>© 2025 <span className="text-purple-600 font-semibold">Training and Placement Management System</span>. All rights reserved.</p>
+          <p className="mt-1 text-xs text-gray-500">Developed by Final Year Students of NIT Jamshedpur</p>
         </div>
       </div>
     </footer>
