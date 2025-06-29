@@ -35,7 +35,7 @@ function LandAbout() {
   return (
     <div
       id="about"
-      className="bg-gradient-to-tr from-[#fdcf43] via-[#f7f7f6] to-[#c4e40a] py-10 scroll-mt-24"
+      className="bg-gradient-to-tr from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD]"
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>

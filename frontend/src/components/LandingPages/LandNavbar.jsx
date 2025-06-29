@@ -55,7 +55,7 @@ function LandingNavbar() {
             alt="CPMS Logo"
             className="rounded-xl border border-gray-300 w-5 h-5 md:w-8 md:h-10 shadow-sm"
           />
-          <h1 className={`text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-emerald-500 bg-clip-text text-transparent`}>
+          <h1 className={`text-2xl md:text-4xl font-extrabold text-purple-700`}>
             {logoText}
           </h1>
         </div>
@@ -74,7 +74,7 @@ function LandingNavbar() {
           <Button
             variant="success"
             size={buttonSize}
-            className="transition-all hover:scale-105 hover:shadow-md px-3 md:w-32"
+            className="bg-purple-600 text-white hover:bg-purple-700 transition-all hover:scale-105 hover:shadow-md px-3 md:w-32"
             onClick={() => navigate('/student/signup')}
           >
             Sign Up

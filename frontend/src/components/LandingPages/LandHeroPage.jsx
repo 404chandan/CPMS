@@ -43,7 +43,7 @@ function LandingHeroPage() {
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
           <input
             type="email"
-            className="px-5 py-3 w-80 sm:w-96 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#1db5d7] text-black transition duration-300"
+            className="px-5 py-3 w-80 sm:w-96 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#9869de] text-black transition duration-300"
             placeholder="How can I help you"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
