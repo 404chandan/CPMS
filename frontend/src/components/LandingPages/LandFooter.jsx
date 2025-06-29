@@ -29,7 +29,7 @@ function LandFooter() {
         {/* Footer Text */}
         <div className="text-center text-sm text-gray-600">
           <p>© 2025 <span className="text-purple-600 font-semibold">Training and Placement Management System</span>. All rights reserved.</p>
-          <p className="mt-1 text-xs text-gray-500">Developed by Final Year Students of NIT Jamshedpur</p>
+          <p className="mt-1 text-xs text-gray-500">Developed by Adarsh, Chandan and Gangadhar Final Year Students of NIT Jamshedpur</p>
         </div>
       </div>
     </footer>
