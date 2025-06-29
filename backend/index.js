@@ -1,38 +1,49 @@
 const express = require('express');
 const cors = require('cors');
 const path = require("path");
+require('dotenv').config();
 
 const app = express();
 
-app.use(express.json());
-app.use(cors());
+const allowedOrigins = [
+  'https://cpms-self.vercel.app',   // ✅ Your Vercel frontend
+  'http://localhost:3000'           // ✅ For local development (optional)
+];
 
-// public folder for users profile
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, curl, postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
+
+app.use(express.json());
+
+// ✅ Public folders
 app.use('/profileImgs', express.static(path.join(__dirname, 'public/profileImgs')));
 app.use('/resume', express.static(path.join(__dirname, 'public/resumes')));
 app.use('/offerLetter', express.static(path.join(__dirname, 'public/offerLetter')));
 
-// database import 
+// ✅ MongoDB connection
 const mongodb = require('./config/MongoDB');
 mongodb();
 
-
-// routes for user
+// ✅ Routes
 app.use('/user', require('./routes/user.route'));
-// routes for student user
 app.use('/student', require('./routes/student.route'));
-// routes for tpo user
 app.use('/tpo', require('./routes/tpo.route'));
-// routes for management user
 app.use('/management', require('./routes/management.route'));
-// routes for admin user
 app.use('/admin', require('./routes/superuser.route'));
-
-// route for company
 app.use('/company', require('./routes/company.route'));
 
-
-
-app.listen(process.env.PORT, () => {
-  console.log(`server is running in http://localhost:${process.env.PORT}`);
+// ✅ Server listen
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
