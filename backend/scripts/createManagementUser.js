@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 const User = require('../models/user.model'); // Update path if needed
 
@@ -11,7 +11,7 @@ if (!mongoURL) {
     process.exit(1);
 }
 
-console.log('MongoDB URL:', mongoURL);
+console.log('MongoDB_URL:', mongoURL);
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
@@ -32,7 +32,7 @@ const createManagementUser = async () => {
             return;
         }
 
-        const hashedPassword = await bcrypt.hash('Admin@123', 10);
+        const hashedPassword = await bcrypt.hash('Manager@123', 10);
 
         const user = new User({
             name: 'Management Admin',
