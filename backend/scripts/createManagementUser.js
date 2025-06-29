@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 require('dotenv').config({ path: '../.env' });
 
-const User = require('../models/user.model'); // Update path if needed
+const User = require('../models/user.model'); // Check the correct path
 
-const mongoURL = process.env.MONGODB_URL; // ✅ Corrected key from .env
+const mongoURL = process.env.MONGODB_URL;
 
 if (!mongoURL) {
     console.error('❌ MongoDB URL is missing in .env file. Check MONGODB_URL');
     process.exit(1);
 }
-
-console.log('MongoDB_URL:', mongoURL);
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
@@ -32,12 +29,10 @@ const createManagementUser = async () => {
             return;
         }
 
-        const hashedPassword = await bcrypt.hash('Manager@123', 10);
-
         const user = new User({
             name: 'Management Admin',
             email: 'management@cpms.com',
-            password: hashedPassword,
+            password: 'Manager@123', // ⚠️ Plain text password (NOT SAFE)
             role: 'management_admin',
             profile: 'https://res.cloudinary.com/default-profile.png',
             isProfileCompleted: false,
