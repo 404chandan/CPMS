@@ -40,7 +40,7 @@ function LandAbout() {
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>
         <p className="text-md md:text-lg max-w-3xl mx-auto text-gray-700 px-3">
-          Developed by Three final year students (Adarsh, Chandan & Gangadhar) of National Institute of Technology Jamshedpur, TPMS (Training and Placement Management System) is a powerful web-based platform to streamline and manage campus placements efficiently.
+          Developed by Three final year students (Adarsh kr, Chandan & Gangadhar) of National Institute of Technology Jamshedpur, TPMS (Training and Placement Management System) is a powerful web-based platform to streamline and manage campus placements efficiently.
         </p>
       </div>
 
