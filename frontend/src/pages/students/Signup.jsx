@@ -34,8 +34,10 @@ function Signup() {
     password: '',
   });
 
+  // Destructuring for Easier Access
   const { first_name, number, email, password } = formData;
 
+  //  Input Change Handler
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (e.target.name === 'first_name') setError({ ...error, first_name: '' })
@@ -47,10 +49,14 @@ function Signup() {
     }
   }
 
+  //  Password Validation Function
+
   function validatePassword(password) {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
   }
+
+  // Form Submit Handler
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,7 +75,8 @@ function Signup() {
     if (!validatePassword(formData?.password)) return setError({ password: 'Password Must Contains: Minimum 8 Char with atleast 1 Special Char, 1 Number, 1 Uppercase, 1 Lowercase' })
 
     if (formData?.number?.length !== 10) return setError({ ...error, number: 'Number Length Should be 10 digital only!' })
-
+  
+      // Sends Data to backend API
     try {
       const response = await axios.post(`${BASE_URL}/student/signup`, formData);
       // console.log(response.data);
@@ -99,6 +106,8 @@ function Signup() {
   const handleEye = () => {
     setEyeOpen(!isEyeOpen);
   }
+
+  // JSX/UI Rendering
 
   return (
     <>
