@@ -1,6 +1,6 @@
 import React from 'react';
 import Student from '../../assets/student.jpg';
-import TPO from '../../assets/tpo.jpg';
+import TPO from '../../assets/tpo.jpeg';
 import Management from '../../assets/management.jpg';
 import Admin from '../../assets/admin.jpg';
 
@@ -13,13 +13,13 @@ function LandAbout() {
         "Students can register, explore job opportunities, apply for jobs, and track application status with a personalized dashboard.",
     },
     {
-      title: "TPO (Training & Placement Officer)",
+      title: "Training & Placement Coordinators",
       image: TPO,
       description:
-        "TPOs manage company data, job postings, application reviews, and generate insightful reports for placement tracking.",
+        "Facilitates smooth campus recruitment by connecting students with companies and managing placement processes efficiently.",
     },
     {
-      title: "Management",
+      title: "Supervisors",
       image: Management,
       description:
         "Management can monitor overall placement activities, review analytics, and control system access and quality assurance.",
@@ -35,12 +35,12 @@ function LandAbout() {
   return (
     <div
       id="about"
-      className="bg-gradient-to-tr from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD]"
+      className="bg-gradient-to-tr from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD] pb-20"
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>
         <p className="text-md md:text-lg max-w-3xl mx-auto text-gray-700 px-3">
-          Developed by Three final year students (Adarsh, Chandan & Gangadhar) of National Institute of Technology Jamshedpur, TPMS (Training and Placement Management System) is a powerful web-based platform to streamline and manage campus placements efficiently.
+          Developed by Three final year students (Adarsh kr, Chandan & Gangadhar) of National Institute of Technology Jamshedpur, TPMS (Training and Placement Management System) is a powerful web-based platform to streamline and manage campus placements efficiently.
         </p>
       </div>
 
