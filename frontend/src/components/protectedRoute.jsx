@@ -39,17 +39,19 @@ const ProtectedRoute = ({ allowedRoles }) => {
   // if (!(user && allowedRoles.includes(user.role))) {
   //   navigate('../404');    
   // }
-
-  useEffect(() => {
-    if (user.isProfileCompleted === 'false') {
-      if (user.role === 'student') navigate(`/student/complete-profile/${user.id}`);
-      if (user.role === 'tpo_admin') navigate(`/tpo/complete-profile/${user.id}`);
-      if (user.role === 'management_admin') navigate(`/management/complete-profile/${user.id}`);
-      return;
-    }
-    setLoad(false);
-  }, []);
-
+// profile completion check
+  // useEffect(() => {
+  //   if (user.isProfileCompleted === 'false') {
+  //     if (user.role === 'student') navigate(`/student/complete-profile/${user.id}`);
+  //     if (user.role === 'tpo_admin') navigate(`/tpo/complete-profile/${user.id}`);
+  //     if (user.role === 'management_admin') navigate(`/management/complete-profile/${user.id}`);
+  //     return;
+  //   }
+  //   setLoad(false);
+  // }, []);
+useEffect(() => {
+  setLoad(false);
+}, []);
 
   // If user has the proper role, render the children routes
   return (
