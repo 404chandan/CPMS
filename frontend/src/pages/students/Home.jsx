@@ -5,7 +5,7 @@ import NotificationBox from '../../components/Students/NotificationBox';
 // student 
 function Home() {
   // Set the page title
-  document.title = 'CPMS | Student Dashboard';
+  document.title = 'TPMS | Student Dashboard';
 
   return (
     <>
