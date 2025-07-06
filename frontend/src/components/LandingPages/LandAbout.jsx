@@ -37,6 +37,7 @@ function LandAbout() {
       id="about"
       className="bg-gradient-to-tr from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD] pb-20"
     >
+      <br />
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>
         <p className="text-md md:text-lg max-w-3xl mx-auto text-gray-700 px-3">

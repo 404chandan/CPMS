@@ -5,76 +5,85 @@ import { Button } from 'react-bootstrap';
 
 function LandingNavbar() {
   const navigate = useNavigate();
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [buttonSize, setButtonSize] = useState('lg');
-  const [logoText, setLogoText] = useState('College Placement Management System');
+  const [logoText, setLogoText] = useState('TPMS');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
 
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width <= 600) {
-        setButtonSize('sm');
-        setLogoText('CPMS');
-      } else if (width <= 768) {
-        setButtonSize('md');
-        setLogoText('Training and Placement Management System');
-      } else {
-        setButtonSize('lg');
-        setLogoText('Training and Placement Management System');
-      }
+      setButtonSize(width <= 600 ? 'sm' : 'md');
+      setLogoText('TPMS');
     };
 
     handleResize();
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  const navItems = [
+    { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
+    { label: 'Placements', id: 'placement-stats' },
+    { label: 'Contact', id: 'contact' },
+  ];
+
   return (
     <header
-      className={`w-full z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'backdrop-blur-md bg-white/60 shadow-md sticky top-0' : ''
-        }`}
+      className={`w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'sticky top-0 backdrop-blur-lg bg-white/80 shadow-md' : ''
+      }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center py-2 px-3">
-        {/* Logo Section */}
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-5">
+        {/* Logo */}
         <div
-          className="flex items-center max-md:gap-2 md:gap-4 cursor-pointer transition-transform hover:scale-105 duration-150"
+          className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-200"
           onClick={() => navigate('/')}
         >
           <img
             src={Logo}
-            alt="CPMS Logo"
-            className="rounded-xl border border-gray-300 w-5 h-5 md:w-8 md:h-10 shadow-sm"
+            alt="TPMS Logo"
+            className="w-10 h-10 rounded-xl border border-gray-300 shadow-sm object-contain"
           />
-          <h1 className={`text-2xl md:text-4xl font-extrabold text-purple-700`}>
+          <h1 className="text-lg md:text-2xl lg:text-3xl font-extrabold text-purple-700 whitespace-nowrap">
             {logoText}
           </h1>
         </div>
 
-        {/* Button Section */}
-        <div className="flex max-md:gap-1 md:gap-3 items-center">
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-base font-medium text-gray-800">
+          {navItems.map(({ label, id }) => (
+           <a key={id}
+  href={`#${id}`}
+  className="relative group no-underline text-gray-700 hover:text-purple-700 transition-colors duration-200"
+>
+  <span>{label}</span>
+  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-purple-700 transition-all duration-300 group-hover:w-full" />
+</a>
+
+          ))}
+        </nav>
+
+        {/* Auth Buttons */}
+        <div className="flex gap-2 md:gap-3">
           <Button
             variant="outline-primary"
             size={buttonSize}
-            className="transition-all hover:scale-105 hover:shadow-md px-3 md:w-32"
+            className="transition-all duration-200 hover:scale-105 hover:shadow-sm px-3 md:w-28"
             onClick={() => navigate('/student/login')}
           >
             Login
           </Button>
-
           <Button
             variant="success"
             size={buttonSize}
-            className="bg-purple-600 text-white hover:bg-purple-700 transition-all hover:scale-105 hover:shadow-md px-3 md:w-32"
+            className="bg-purple-600 border-purple-600 text-white hover:bg-purple-700 transition-all duration-200 hover:scale-105 hover:shadow-sm px-3 md:w-28"
             onClick={() => navigate('/student/signup')}
           >
             Sign Up
