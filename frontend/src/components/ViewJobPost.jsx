@@ -10,7 +10,7 @@ import { BASE_URL } from '../config/backend_url';
 
 
 function ViewJobPost() {
-  document.title = 'CPMS | View Job Post';
+  document.title = 'TPMS | View Job Post';
   const { jobId } = useParams();
 
   const [data, setData] = useState({});

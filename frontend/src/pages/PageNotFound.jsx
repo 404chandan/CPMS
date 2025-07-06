@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Img from '../assets/404Img.jpg';
 
 function PageNotFound() {
-  document.title = 'CPMS | Page Not Found';
+  document.title = 'TPMS | Page Not Found';
   return (
     <>
       <div className="flex h-screen justify-center items-center px-3 py-2 max-sm:flex-col">

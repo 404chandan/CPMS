@@ -6,7 +6,7 @@ import AddUserTable from '../AddUserTable';
 import { BASE_URL } from '../../config/backend_url';
 
 function AddTPO() {
-  document.title = 'CPMS | TPO Users';
+  document.title = 'TPMS | TPO Users';
   // tpo users store here
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -11,7 +11,7 @@ import { BASE_URL } from '../config/backend_url';
 import TablePlaceholder from './TablePlaceholder';
 
 function AllCompany() {
-  document.title = 'CPMS | All Company';
+  document.title = 'TPMS | All Company';
 
   const navigate = useNavigate();
   const location = useLocation();

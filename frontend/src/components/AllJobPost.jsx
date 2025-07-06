@@ -11,7 +11,7 @@ import TablePlaceholder from './TablePlaceholder';
 import { BASE_URL } from '../config/backend_url';
 
 function AllJobPost() {
-  document.title = 'CPMS | Job Listings';
+  document.title = 'TPMS | Job Listings';
   const navigate = useNavigate();
   const location = useLocation();
 

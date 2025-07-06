@@ -7,7 +7,7 @@ import isAuthenticated from '../../utility/auth.utility';
 import { BASE_URL } from '../../config/backend_url';
 
 function ManagementSignup() {
-  document.title = 'CPMS | Management Sign Up';
+  document.title = 'TPMS | Management Sign Up';
   const navigate = useNavigate();
   const location = useLocation();
 

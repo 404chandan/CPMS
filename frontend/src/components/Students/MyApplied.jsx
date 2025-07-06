@@ -8,7 +8,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import { BASE_URL } from '../../config/backend_url';
 
 function MyApplied() {
-  document.title = 'CPMS | My Applied Job';
+  document.title = 'TPMS | My Applied Job';
   const [loading, setLoading] = useState(true);
 
   // useState for load data

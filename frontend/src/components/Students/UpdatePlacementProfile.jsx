@@ -11,7 +11,7 @@ import { BASE_URL } from '../../config/backend_url';
 
 
 function UpdatePlacementProfile() {
-  document.title = 'CPMS | Placement Profile';
+  document.title = 'TPMS | Placement Profile';
 
   // userData to store user data get from userId
   const [userData, setUserData] = useState(null);

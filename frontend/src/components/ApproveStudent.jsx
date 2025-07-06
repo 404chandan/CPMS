@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BASE_URL } from '../config/backend_url';
 
 function ApproveStudent() {
-  document.title = 'CPMS | Approve Students';
+  document.title = 'TPMS | Approve Students';
 
   // student users store here
   const [users, setUsers] = useState([]);
