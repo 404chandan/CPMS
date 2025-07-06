@@ -6,6 +6,7 @@ import LandFooter from '../components/LandingPages/LandFooter';
 import LandingPlacementStats from '../components/LandingPages/LandingPlacementStats';
 import Toast from '../components/Toast';
 import { useLocation, useNavigate } from 'react-router-dom';
+import PlacementCoordinators from '../components/LandingPages/PlacementCoordinators';
 
 
 function LandingPage() {
@@ -44,6 +45,7 @@ function LandingPage() {
         <LandingHeroPage />
         <LandingAbout />
         <LandingPlacementStats />
+        <PlacementCoordinators />
         <LandFooter />
         
       </div>

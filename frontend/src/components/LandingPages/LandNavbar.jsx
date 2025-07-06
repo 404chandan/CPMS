@@ -31,7 +31,7 @@ function LandingNavbar() {
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
     { label: 'Placements', id: 'placement-stats' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Coordinators', id: 'placement-coordinators' },
   ];
 
   return (
