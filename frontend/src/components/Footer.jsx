@@ -12,7 +12,7 @@ function Footer({ isSidebarVisible }) {
               target='_blanck'
               className='cursor-pointer font-bold text-blue-500 no-underline hover:text-blue-700'
             >
-              NIT JSR 
+              NIT Jamshedpur
             </a>
           </span>
         </div>
