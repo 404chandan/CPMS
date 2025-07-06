@@ -14,7 +14,7 @@ function Home() {
       <div className="mb-4">
         {/* Complete Profile Link */}
         <Link
-          to={`/student/complete-profile/${userId}`}
+          to={`/student/dashboard/complete-profile/${userId}`}
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition no-underline"
         >
           Complete Your Profile
