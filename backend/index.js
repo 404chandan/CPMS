@@ -19,6 +19,7 @@ app.use(limiter);
 // ✅ CORS
 const allowedOrigins = [
   'https://tpms-nitjsr.vercel.app',
+  'https://tpms-nitjsr.vercel.app/tpo',
   'http://localhost:3000',
   'http://localhost:5173' // 👈 Add this line
 ];
