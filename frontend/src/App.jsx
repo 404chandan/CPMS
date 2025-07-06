@@ -23,6 +23,7 @@ const AddCompany = lazy(() => import("./components/TPO/AddCompany.jsx"));
 const HomeManagement = lazy(() => import('./pages/Management/Home.jsx'));
 const LoginManagement = lazy(() => import("./pages/Management/Login.jsx"));
 const ListAllTPO = lazy(() => import("./components/Management/ListAllTPO.jsx"));
+const SignupManagement = lazy(() => import("./pages/Management/SignUp.jsx"));
 // super user
 const LoginSuperUser = lazy(() => import("./components/SuperUser/Login.jsx"));
 const ManagementSuperUser = lazy(() => import("./components/SuperUser/AddManagement.jsx"));
@@ -128,6 +129,8 @@ function App() {
             <Route path="/tpo/login" element={<LoginTPO />} />
             {/* Management Login  */}
             <Route path="/management/login" element={<LoginManagement />} />
+            <Route path="/management/signup" element={<SignupManagement />} />
+
             {/* admin login */}
             <Route path="/admin" element={<LoginSuperUser />} />
 
