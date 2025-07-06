@@ -5,6 +5,8 @@ const router = express.Router();
 
 const authenticateToken = require('../middleware/auth.middleware');
 
+// management signup controller
+const SignupManagement = require('../controllers/Management/signup.controller'); // 👈 Import added
 
 // management login controller
 const Login = require('../controllers/Management/login.controller');
@@ -19,7 +21,8 @@ const { AddTPO, AddManagement, AddStudent } = require('../controllers/Management
 const { SendNotice, GetAllNotice, DeleteNotice, GetNotice } = require('../controllers/Management/notice.controller');
 
 
-
+// ✅ Signup route for management
+router.post('/signup', SignupManagement); // 👈 Route added
 
 router.post('/login', Login);
 
