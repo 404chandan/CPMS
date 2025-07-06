@@ -19,7 +19,8 @@ app.use(limiter);
 // ✅ CORS
 const allowedOrigins = [
   'https://cpms-self.vercel.app',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'http://localhost:5173' // 👈 Add this line
 ];
 
 app.use(cors({

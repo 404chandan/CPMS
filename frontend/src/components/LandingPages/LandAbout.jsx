@@ -44,7 +44,7 @@ function LandAbout() {
       <br />
       <br />
 
-      {/* Admin Login Buttons */}
+      {/* Admin Login Buttons
       <div className="flex flex-wrap justify-center items-center max-md:gap-3 md:gap-6 mb-8">
         {loginLinks.map((link, idx) => (
           <button
@@ -55,7 +55,7 @@ function LandAbout() {
             {link.label}
           </button>
         ))}
-      </div>
+      </div> */}
 
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>
