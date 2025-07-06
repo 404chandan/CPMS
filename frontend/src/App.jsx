@@ -142,6 +142,7 @@ function App() {
 
               <Route element={<Layout header="Dashboard" />}>
                 <Route path="/student/dashboard" element={<HomeStudent />} />
+                <Route path="/student/dashboard/complete-profile/:userId" element={<UserDetails />} />
               </Route>
               <Route element={<Layout header="Account Details" />}>
                 <Route path="/student/account" element={<Account />} />

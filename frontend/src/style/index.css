@@ -118,3 +118,6 @@ input[type=number]::-webkit-outer-spin-button {
   /* Darker scrollbar color on hover */
 }
 
+.html {
+  scroll-behavior: smooth;
+}

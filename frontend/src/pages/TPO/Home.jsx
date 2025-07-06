@@ -4,7 +4,7 @@ import NotificationBox from '../../components/NotificationBox';
 
 // tpo 
 function Home() {
-  document.title = 'CPMS | TPO Dashboard';
+  document.title = 'TPMS | TPO Dashboard';
   return (
     <>
       <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">

@@ -3,12 +3,14 @@ import LandingNavbar from '../components/LandingPages/LandNavbar';
 import LandingHeroPage from '../components/LandingPages/LandHeroPage';
 import LandingAbout from '../components/LandingPages/LandAbout';
 import LandFooter from '../components/LandingPages/LandFooter';
+import LandingPlacementStats from '../components/LandingPages/LandingPlacementStats';
 import Toast from '../components/Toast';
 import { useLocation, useNavigate } from 'react-router-dom';
+import PlacementCoordinators from '../components/LandingPages/PlacementCoordinators';
 
 
 function LandingPage() {
-  document.title = 'CPMS';
+  document.title = 'TPMS';
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -42,7 +44,10 @@ function LandingPage() {
         <LandingNavbar />
         <LandingHeroPage />
         <LandingAbout />
+        <LandingPlacementStats />
+        <PlacementCoordinators />
         <LandFooter />
+        
       </div>
 
     </>

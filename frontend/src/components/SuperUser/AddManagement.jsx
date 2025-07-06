@@ -7,7 +7,7 @@ import { BASE_URL } from '../../config/backend_url';
 
 
 function Management() {
-  document.title = 'CPMS | Management Users';
+  document.title = 'TPMS | Management Users';
 
   // Management users store here
   const [users, setUsers] = useState([]);

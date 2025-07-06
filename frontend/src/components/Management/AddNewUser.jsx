@@ -8,7 +8,7 @@ import { BASE_URL } from '../../config/backend_url';
 import { useLocation } from 'react-router-dom';
 
 function AddNewUser() {
-  document.title = 'CPMS | Add new user';
+  document.title = 'TPMS | Add new user';
 
   const location = useLocation();
   // filter management or tpo or student to add

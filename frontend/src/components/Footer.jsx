@@ -12,14 +12,14 @@ function Footer({ isSidebarVisible }) {
               target='_blanck'
               className='cursor-pointer font-bold text-blue-500 no-underline hover:text-blue-700'
             >
-              NIT JSR 
+              NIT Jamshedpur
             </a>
           </span>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center text-right mt-2 sm:mt-0">
           <span className="font-semibold">Version</span>
-          <span className="px-1">1.0.1</span>
+          <span className="px-1">1.0.0</span>
         </div>
       </div>
 

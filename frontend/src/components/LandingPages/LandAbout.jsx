@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // ✅ import added
+
 import Student from '../../assets/student.jpg';
 import TPO from '../../assets/tpo.jpeg';
 import Management from '../../assets/management.jpg';
 import Admin from '../../assets/admin.jpg';
 
 function LandAbout() {
+  const navigate = useNavigate(); // ✅ useNavigate initialized
+
   const roles = [
     {
       title: "Student",
@@ -19,17 +23,17 @@ function LandAbout() {
         "Facilitates smooth campus recruitment by connecting students with companies and managing placement processes efficiently.",
     },
     {
-      title: "Supervisors",
-      image: Management,
-      description:
-        "Management can monitor overall placement activities, review analytics, and control system access and quality assurance.",
-    },
-    {
-      title: "Super User (Admin)",
+      title: "Placement Stats",
       image: Admin,
       description:
-        "Admins handle all roles with super privileges—managing users, system settings, and ensuring smooth operations across modules.",
+        "Placement statistics provide insights into student placements, company participation, and overall placement success rates.",
     },
+  ];
+
+  const loginLinks = [
+    { label: 'Login as TPO', path: '/tpo/login' },
+    { label: 'Login as Management', path: '/management/login' },
+    { label: 'Login as Super Admin', path: '/admin' },
   ];
 
   return (
@@ -37,6 +41,22 @@ function LandAbout() {
       id="about"
       className="bg-gradient-to-tr from-[#7C3AED] via-[#A78BFA] to-[#C4B5FD] pb-20"
     >
+      <br />
+      <br />
+
+      {/* Admin Login Buttons
+      <div className="flex flex-wrap justify-center items-center max-md:gap-3 md:gap-6 mb-8">
+        {loginLinks.map((link, idx) => (
+          <button
+            key={idx}
+            onClick={() => navigate(link.path)} // ✅ Now works
+            className="bg-[#146b23] hover:bg-purple-500 px-5 py-2 rounded-md text-white text-sm font-medium shadow-md transition-all duration-300"
+          >
+            {link.label}
+          </button>
+        ))}
+      </div> */}
+
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 playfair">About TPMS</h2>
         <p className="text-md md:text-lg max-w-3xl mx-auto text-gray-700 px-3">

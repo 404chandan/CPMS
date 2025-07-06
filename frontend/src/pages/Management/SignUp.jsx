@@ -7,7 +7,7 @@ import isAuthenticated from '../../utility/auth.utility';
 import { BASE_URL } from '../../config/backend_url';
 
 function ManagementSignup() {
-  document.title = 'CPMS | Management Sign Up';
+  document.title = 'TPMS | Management Sign Up';
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -133,7 +133,7 @@ function ManagementSignup() {
           <span className='text-center'>Already have an account?
             <span className='text-blue-500 font-bold cursor-pointer px-1' onClick={() => navigate('../management/login')}>Login</span>
           </span>
-          <p className="text-muted text-center text-gray-400">© College Placement Management System 2024 - 25</p>
+          <p className="text-muted text-center text-gray-400">© Training & Placement Management System 2024 - 25</p>
         </form>
       </div>
     </>

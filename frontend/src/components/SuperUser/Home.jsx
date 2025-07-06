@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge';
 import { BASE_URL } from '../../config/backend_url';
 
 function Home() {
-  document.title = 'CPMS | Admin Dashboard';
+  document.title = 'TPMS | Admin Dashboard';
 
   const [countUsers, setCountUsers] = useState({});
   const [loading, setLoading] = useState(true);
