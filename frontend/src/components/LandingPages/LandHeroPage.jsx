@@ -16,6 +16,8 @@ function LandingHeroPage() {
     }
   }
 
+
+
   const handleScrollAbout = () => document.getElementById('about').scrollIntoView();
 
   return (
@@ -56,6 +58,7 @@ function LandingHeroPage() {
             Click to Explore 
           </button>
         </div>
+        
 
         {/* Call-to-action */}
         <div className="mt-8">
