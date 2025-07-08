@@ -12,34 +12,20 @@ app.use(helmet());
 
 // ✅ Rate limiter
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
   message: { msg: 'Too many requests, please try again later.' }
 });
 app.use(limiter);
 
-// ✅ CORS middleware to remove CORS block
-const allowedOrigins = [
-  'https://tpms-nitjsr.vercel.app',
-  'http://localhost:3000',
-  'http://localhost:5173'
-];
-
+// ✅ CORS middleware — Allow all origins (no credentials)
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS policy violation: Origin not allowed'));
-    }
-  },
-  credentials: true,
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
-
-app.use(cors(corsOptions));         // Apply CORS to all routes
-app.options('*', cors(corsOptions)); // Handle preflight requests
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Pre-flight requests
 
 // ✅ Body parser
 app.use(express.json());
@@ -56,7 +42,7 @@ mongodb();
 // ✅ API Routes
 app.use('/user', require('./routes/user.route'));
 app.use('/student', require('./routes/student.route'));
-app.use('/tpo', require('./routes/tpo.route'));           // <== This includes /tpo/login
+app.use('/tpo', require('./routes/tpo.route'));
 app.use('/management', require('./routes/management.route'));
 app.use('/admin', require('./routes/superuser.route'));
 app.use('/company', require('./routes/company.route'));
