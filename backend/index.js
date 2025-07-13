@@ -35,23 +35,23 @@ const allowedOrigins = [
   'http://localhost:3000',          // Local dev front‑end
 ];
 
-app.use(
-  cors({
-    origin(origin, cb) {
-      // curl/Postman or same‑origin requests have no Origin header
-      if (!origin) return cb(null, true);
-      if (allowedOrigins.includes(origin)) return cb(null, true);
-      return cb(new Error(`Origin ${origin} not allowed by CORS`));
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,        // ← allow cookies / Authorization header
-    optionsSuccessStatus: 200 // For legacy browsers
-  }),
-);
+const corsOptions = {
+  origin(origin, cb) {
+    // curl/Postman or same‑origin requests have no Origin header
+    if (!origin) return cb(null, true);
+    if (allowedOrigins.includes(origin)) return cb(null, true);
+    return cb(new Error(`Origin ${origin} not allowed by CORS`));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,        // ← allow cookies / Authorization header
+  optionsSuccessStatus: 200 // For legacy browsers
+};
 
-// Respond rapidly to CORS pre‑flight
-app.options('*', cors());
+app.use(cors(corsOptions));
+
+// ✅ Fix: Reuse the same CORS options for preflight
+app.options('*', cors(corsOptions));
 
 /*─────────────────────────────────────────────────────────────*
  * JSON body parser
